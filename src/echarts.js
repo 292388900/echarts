@@ -27,9 +27,9 @@ define(function (require) {
     var _instances = {};    // ECharts实例map索引
     var DOM_ATTRIBUTE_KEY = '_echarts_instance_';
 
-    self.version = '2.2.5';
+    self.version = '2.2.7';
     self.dependencies = {
-        zrender: '2.1.0'
+        zrender: '2.1.1'
     };
     /**
      * 入口方法
@@ -1441,7 +1441,9 @@ define(function (require) {
                     style: {
                         x: imgList[c].left - minLeft,
                         y: imgList[c].top - minTop,
-                        image: imgList[c].img
+                        image: imgList[c].img,
+                        width: imgList[c].right - imgList[c].left,
+                        height: imgList[c].bottom - imgList[c].top
                     }
                 }));
             }
